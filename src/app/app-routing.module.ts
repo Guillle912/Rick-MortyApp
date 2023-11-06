@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListaPersonajesComponent } from './components/lista-personajes/lista-personajes.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'personajes', component: ListaPersonajesComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

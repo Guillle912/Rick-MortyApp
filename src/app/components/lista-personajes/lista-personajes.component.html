@@ -1,0 +1,16 @@
+
+<div class="row g-4">
+  <h2>Personajes</h2>
+  <article class="col-3 card text-center" *ngFor="let personaje of arrPersonajes">
+
+    <figure>
+      <img [src]="personaje.image" alt="">
+    </figure>
+
+    <h3>{{personaje.name}}</h3>
+    <p>{{personaje.status}}</p>
+    <p>{{personaje.gender}}</p>
+    <p>{{personaje.species}}</p>
+
+  </article>
+</div>
