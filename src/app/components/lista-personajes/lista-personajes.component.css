@@ -2,3 +2,14 @@ img{
   display: block;
   width: 100%;
 }
+
+
+
+
+.alive{
+  background-color: #38e46c;
+}
+
+.dead{
+  background-color: rgba(232, 20, 20, 0.735);
+}

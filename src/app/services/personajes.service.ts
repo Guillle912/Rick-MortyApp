@@ -7,12 +7,12 @@ import { firstValueFrom } from 'rxjs';
 })
 export class PersonajesService {
   url: string = 'https://rickandmortyapi.com/api/character'
-  httpClient = inject(HttpClient)
+  private httpClient = inject(HttpClient)
 
 
-  getAlCharacters(){
+  getAlCharacters(page: number){
     return firstValueFrom(
-      this.httpClient.get<any>( this.url )
+      this.httpClient.get<any>( `${this.url}/?page=${page}` )
     )
   }
 }

@@ -1,16 +1,44 @@
+<div class="row mt-4">
+  <button
+    *ngIf="totalPages !== page"
+    class="btn btn-success "
+    (click)="onPage(1)">
+    ->Siguiente
+  </button>
+  <button
+    *ngIf="page > 1"
+    class="btn btn-success"
+    (click)="onPage(-1)">
+    <-Anterior
+  </button>
+  <p class="text-center fw-bold">Pagina: {{page}} de {{totalPages}}</p>
 
+</div>
 <div class="row g-4">
-  <h2>Personajes</h2>
-  <article class="col-3 card text-center" *ngFor="let personaje of arrPersonajes">
+  <h2 class="fs-1 fw-bold">Personajes</h2>
+  <article
+  [ngClass]="{
+    dead: personaje.status === 'Dead',
+    alive: personaje.status === 'Alive'}"
+  class="col-12 col-md-3 mb-4 card text-center "
+  *ngFor="let personaje of arrPersonajes">
 
-    <figure>
+    <figure class="card-img-top">
       <img [src]="personaje.image" alt="">
     </figure>
 
-    <h3>{{personaje.name}}</h3>
-    <p>{{personaje.status}}</p>
-    <p>{{personaje.gender}}</p>
-    <p>{{personaje.species}}</p>
+    <div class="card-body">
+      <h3 class="card-title">{{personaje.name}}</h3>
+      <p class="card-text">{{personaje.status}}</p>
+      <p class="card-text">{{personaje.gender}}</p>
+      <p class="card-text">{{personaje.species}}</p>
+      <button class="btn btn-warning" (click)="onClickFavorito(personaje)">Añadir a favoritos</button>
+    </div>
 
   </article>
 </div>
+
+
+<footer class="my-5">
+  <p class="text-center fw-bold ">Pagina creada por Guillermo Vidal &copy; 2023</p>
+</footer>

@@ -1,0 +1,25 @@
+
+
+<div class="row g-4">
+  <h2>Personajes Favoritos</h2>
+  <article
+  [ngClass]="{
+    dead: personaje.status === 'Dead',
+    alive: personaje.status === 'Alive'}"
+  class="col-3 card text-center "
+  *ngFor="let personaje of arrPersonajes">
+
+    <figure class="card-img-top">
+      <img [src]="personaje.image" alt="">
+    </figure>
+
+    <div class="card-body">
+      <h3 class="card-title">{{personaje.name}}</h3>
+      <p class="card-text">{{personaje.status}}</p>
+      <p class="card-text">{{personaje.gender}}</p>
+      <p class="card-text">{{personaje.species}}</p>
+      <button (click)="onClickEliminar(personaje.id)" >Eliminar Favorito</button>
+    </div>
+
+  </article>
+</div>

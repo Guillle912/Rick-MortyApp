@@ -1,0 +1,15 @@
+img{
+  display: block;
+  width: 100%;
+}
+
+
+
+
+.alive{
+  background-color: #198754;
+}
+
+.dead{
+  background-color: brown;
+}
